@@ -44,3 +44,22 @@ LOG ON
 	MAXSIZE = 40MB,
 	FILEGROWTH = 5MB
 );
+
+-------------------------------------
+
+-- USE Base_3
+
+CREATE TABLE UserData_1
+(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	username NVARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	passwordz CHAR(60) NOT NULL
+);
+
+CREATE LOGIN Login_1 WITH PASSWORD = '12345';
+CREATE USER lowkeyloser FOR LOGIN Login_1;
+CREATE ROLE creator;
+DENY UPDATE, INSERT ON UserData_1 TO lowkeyloser
+
+
