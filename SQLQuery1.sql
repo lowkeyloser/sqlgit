@@ -62,4 +62,13 @@ CREATE USER lowkeyloser FOR LOGIN Login_1;
 CREATE ROLE creator;
 DENY UPDATE, INSERT ON UserData_1 TO lowkeyloser
 
+CREATE TABLE Table123
+(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	dataID INT FOREIGN KEY REFERENCES UserData_1(id),
+	col1 INT,
+	col2 NVARCHAR(25)
+);
+
+
 
