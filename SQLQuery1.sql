@@ -58,7 +58,9 @@ CREATE TABLE UserData_1
 );
 
 CREATE LOGIN Login_1 WITH PASSWORD = '12345';
+CREATE LOGIN vai WITH PASSWORD = 'vai';
 CREATE USER lowkeyloser FOR LOGIN Login_1;
+CREATE USER vaivai FOR LOGIN vai;
 CREATE ROLE creator;
 DENY UPDATE, INSERT ON UserData_1 TO lowkeyloser
 
@@ -69,6 +71,18 @@ CREATE TABLE Table123
 	col1 INT,
 	col2 NVARCHAR(25)
 );
+
+--ALTER SERVER ROLE dbcreator ADD MEMBER Login_1;
+
+ALTER TABLE Table123 ADD col3 DATETIME
+
+
+
+
+
+
+
+
 
 
 
