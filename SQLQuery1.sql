@@ -72,9 +72,20 @@ CREATE TABLE Table123
 	col2 NVARCHAR(25)
 );
 
---ALTER SERVER ROLE dbcreator ADD MEMBER Login_1;
 
-ALTER TABLE Table123 ADD col3 DATETIME
+-- Granted CREATE permission to Login_1
+ALTER SERVER ROLE dbcreator ADD MEMBER Login_1;
+
+
+-- As an admin
+GRANT ALTER ON Table123 TO Login_1
+USE Base_3
+
+-- As Login_1 user(lowkeyloser)
+ALTER TABLE Table123 ADD col3 DATETIME;
+
+
+
 
 
 
